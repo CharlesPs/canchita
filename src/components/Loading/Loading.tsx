@@ -11,7 +11,7 @@ const CenteredContainer = styled.div`
 const Loading = () => {
   return (
     <CenteredContainer>
-      <CircularProgress />
+      <CircularProgress data-testid="LoadingProgress" />
     </CenteredContainer>
   );
 };

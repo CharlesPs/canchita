@@ -1,15 +1,14 @@
 import SearchIcon from '@mui/icons-material/Search'
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 
 import { discoverMovies, searchMovies } from '../../redux/slices/movies.slice'
-import { AppDispatch } from '../../redux/store'
+import { AppDispatch, useAppDispatch } from '../../redux/store'
 
 import { Search, SearchIconWrapper, StyledInputBase } from "./SearchInput.styled"
 
 const SearchInput = () => {
 
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch: AppDispatch = useAppDispatch();
 
   const [criteria, setCriteria] = useState('')
 
@@ -31,6 +30,7 @@ const SearchInput = () => {
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
+          data-testid="SearchInput"
           placeholder="Search movies…"
           value={criteria}
           onChange={(e) => setCriteria(e.target.value)}

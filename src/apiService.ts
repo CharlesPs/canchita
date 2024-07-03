@@ -36,3 +36,5 @@ export const get = async (
     return { error: error instanceof Error ? error.message : 'Unknown Error' }
   }
 }
+
+export default axiosInstance
